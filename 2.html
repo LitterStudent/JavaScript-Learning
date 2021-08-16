@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app" style="width: 90px; height: 90px; background-color: skyblue;"></div>
+    <script>
+        function ListNode(x) {
+            this.val = x;
+            this.next = null;
+        }
+        var l1 = new ListNode()
+        l1.val = 1;
+        var l2 = new ListNode()
+        l1.next = l2
+        l2.val = 2;
+        var l3 = new ListNode()
+        l2.next = l3
+        l3.val = 3;
+        l3.next = null
+
+
+        function ReverseList(pHead) {
+            // write code here
+            let next = pHead.next;
+            let pre = null;
+            let cur = pHead;
+            while (cur) {
+                cur.next = pre;
+                pre = cur;
+                cur = next;
+                if (cur != null) {
+                    next = cur.next;
+                }
+
+            }
+            return pre;
+        }
+        console.log(ReverseList(l1))
+    </script>
+</body>
+
+
+</html>
